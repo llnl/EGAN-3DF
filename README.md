@@ -3,7 +3,7 @@ This code implements a hybrid deep learning framework for binding affinity predi
 
 ## Prerequisites
 - [PyTorch](https://pytorch.org)
-- - [RDkit](https://www.rdkit.org)
+- [RDkit](https://www.rdkit.org)
 
 ## Author
 EGAN-3DF was created by Heesung Shim (shim2@llnl.gov)
