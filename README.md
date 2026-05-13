@@ -5,6 +5,10 @@ This code implements a hybrid deep learning framework for binding affinity predi
 - [PyTorch](https://pytorch.org)
 - [RDkit](https://www.rdkit.org)
 
+## Running the application
+### Data Format
+EGAN-3DF use a 3D atomic representation as input data in a Hierarchical Data Format (HDF5). See (https://github.com/LLNL/FAST/) for more information about this HDF5 format.
+
 ## Author
 EGAN-3DF was created by Heesung Shim (shim2@llnl.gov)
 
