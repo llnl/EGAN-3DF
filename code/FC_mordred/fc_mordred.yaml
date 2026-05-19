@@ -1,0 +1,61 @@
+dataset:
+  mlhdf_ver: 2
+  train_csvs: 
+    - /path/to/train.csv
+  train_fns:
+    - /path/to/data.hdf 
+  val_csvs: 
+    - /path/to/valid.csv
+  val_fns:
+    - /path/to/data.hdf 
+  test_csvs:
+    - /path/to/test.csv
+  test_fns:
+    - /path/to/data.hdf 
+
+  label_type: 1  # 1: regression for binding affinity, 2: binary classification
+  use_crystal: False
+  use_random: False
+  affine_xyz: True
+  h5_driver: null
+  
+  
+checkpoint:
+  dir: /path/to/...
+  prefix: prefix
+  suffix: 2
+  save_step: 10000
+  freeze: 0
+
+results_save_dir:
+  dir: /path/to/...
+
+train:
+  batch_size: 100
+  num_workers: 10
+  epochs: 500
+  lr: 0.0007
+  lr_gamma: 0.5
+  step_size: 100
+  weight_decay: 0.0001
+  
+  
+test:
+  batch_size: 10
+  num_workers: 2
+  pred_suffix: null
+
+model:
+  nn_type: 2  # 1: PCN, 2: SGCNN, 3: SE-3
+  out_dim: 1  # 1 or 6
+  efeat: 0
+  mordred: 1555
+  loss_weight: 1.0e-2 # 1.0e-2 # 0 or 1.0e-2
+  SGCNN:
+    covalent_gather_width: 16
+    non_covalent_gather_width: 12
+    covalent_k: 3
+    non_covalent_k: 3
+    covalent_neighbor_threshold: 1.5
+    non_covalent_neighbor_threshold: 3
+  

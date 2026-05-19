@@ -1,0 +1,60 @@
+dataset:
+  mlhdf_ver: 2
+  train_csvs: 
+    - /path/to/train.csv
+  train_fns:
+    - /path/to/data.hdf
+    
+  val_csvs: 
+    - /path/to/valid.csv
+  val_fns:
+    - /path/to/data.hdf
+
+  test_csvs:
+    - /path/to/test.csv
+  test_fns:
+    - /path/to/data.hdf
+  label_type: 1  # 1: regression for binding affinity, 2: pecan as binary classification
+  use_crystal: False
+  use_random: False
+  affine_xyz: True
+  h5_driver: null
+  
+  
+checkpoint:
+  dir: /path/to/check_point
+  prefix: prefix
+  suffix: 1
+  save_step: 10000
+  freeze: 0
+
+results_save_dir:
+  dir: /path/to/results
+
+train:
+  batch_size: 100
+  num_workers: 10
+  epochs: 500
+  lr: 0.001
+  lr_milestones: [5, 10, 20, 30, 50, 70, 90, 200, 300, 400, 500, 600, 700, 800, 900, 999]
+  lr_gamma: 0.9
+  step_size: 10
+  
+test:
+  batch_size: 10
+  num_workers: 2
+  pred_suffix: null
+
+model:
+  out_dim: 1  # 1 or 6
+  loss_weight: 1.0e-2 # 1.0e-2 # 0 or 1.0e-2
+  EGNN:
+      in_edge_nf: 1
+      distance_cutoff: 5
+      n_layers: 6
+      residual: True
+      attention: True
+      normalize: False
+      tanh: False
+
+  

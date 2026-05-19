@@ -1,0 +1,51 @@
+dataset:
+  mlhdf_ver: 2
+  train_csvs: 
+    - /path/to/train.csv
+  train_set1_npy:
+    - /path/to/train.npy
+  
+  val_csvs: 
+    - /path/to/valid.csv
+  val_set1_npy:
+    - /path/to/val.npy
+  
+  test_csvs:
+    - /path/to/test.csv
+  test_set1_npy:
+    - /path/to/test.npy
+  
+checkpoint:
+  dir: /path/to/check_point
+  prefix: prefix
+  suffix: 1
+  save_step: 10000
+  freeze: 0
+  
+results_save_dir:
+  dir: /path/to/results
+
+train:
+  batch_size: 20
+  num_workers: 0
+  epochs: 200
+  lr: 0.0007
+  step_size: 10
+  weight_decay: 0.0001
+  pred_suffix: null
+
+test:
+  batch_size: 10
+  num_workers: 2
+  pred_suffix: null
+
+model:
+  input_dim: 10*10 
+  
+  nn_type: 2  # 1: PCN, 2: SGCNN, 3: SE-3
+  out_dim: 1  # 1 or 6
+  
+  mordred: 1555
+  loss_weight: 1.0e-2 # 1.0e-2 # 0 or 1.0e-2
+  
+
